@@ -4,7 +4,7 @@ html, body{
 	box-sizing: border-box;
 }
 header{
-	background-image: url("Imagens/cientista.JPG");
+	background-image: url("https://aris402.github.io/Imagens/cientista.JPG");
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
