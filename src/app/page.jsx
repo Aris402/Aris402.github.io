@@ -1,4 +1,4 @@
-import Sobre from './components/pages/Sobre'
+import Sobre from "./components/pages/Sobre"
 
 export default function Home() {
   return (

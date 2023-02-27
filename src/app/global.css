@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
   }
-  body{
-    background-color: #141517;
-  }
+body{
+  background-color: #141517;
+}
+a{
+  text-decoration: none;
+}

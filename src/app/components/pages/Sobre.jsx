@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 import { Inconsolata, Lato } from 'next/font/google';
+import { FlexRow, MarkedSpan, FlexColumn, Paragraph } from "./styles/sharedstyles";
 
 const inconsolata = Inconsolata({
     subsets: ['latin'],
@@ -18,20 +19,11 @@ const ImageDiv = styled.div`
     border-radius: 50%;
     background-image: url('/images/ari.png');
     background-size: cover;
-`
-const Paragraph = styled.p`
-    background: linear-gradient(180deg, #7A84E1 22.4%, #424FC5 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
-    font-size: 30px;
-    font-weight: bold;
-`
-const FlexRow = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    @media screen and (max-width: 700px){
+        padding: 50px;
+        margin: 0 10px 10px 0;
+    }
 `
 const BioDescription = styled.p`
     color: #A4AACA;
@@ -45,16 +37,7 @@ const Description = styled.p`
     margin-top: 13px;
     text-indent: 47px;
     line-height: 19px;
-`
-const MarkedSpan = styled.span`
-    color: #fff;
-`
-const FlexColumn = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: left;
+    text-indent: 0;
 `
 const AboutMe = styled.div`
     margin-top: 50px;
@@ -72,17 +55,22 @@ const WorkDiv = styled.div`
 const TimeWorked = styled.p`
     color: #A4AACA;
     font-weight: normal;
-    margin-top: 15px;
+    margin-top: 7px;
 `
 const Trajectory = styled.div`
     margin-top: 50px;
     width: 100%;
     max-width: 700px;
 `
+const GeneralDiv = styled.div`
+    @media screen and (max-width: 700px){
+        padding: 0 20px;
+    }
+`
 
 export default function Sobre(){
     return(
-        <div>
+        <GeneralDiv>
             <FlexRow>
                 <div>
                     <ImageDiv>
@@ -125,6 +113,6 @@ export default function Sobre(){
                     <TimeWorked className={lato.className}>2023 - Atualmente</TimeWorked>
                 </WorkDiv>
             </FlexColumn>
-        </div>
+        </GeneralDiv>
     )
 }

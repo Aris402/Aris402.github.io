@@ -2,6 +2,8 @@
 
 import styled from "styled-components"
 import { Lato } from 'next/font/google';
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const lato = Lato({
     subsets: ['latin'],
@@ -25,33 +27,44 @@ const NavLi = styled.li`
         transition: .5s;
         border-radius: 4px;
     }
-
     &:active{
-        color: white;
         background-color: #141517;
     }
+    @media screen and (max-width: 700px){
+        &:hover{
+            background-color: #141517;
+        }
+    }
 `
-const NavUnderline = styled.span`
-    content: "";
-    position: absolute;
-    margin: 0px auto;
-    top: 18px;
-    left: 0px;
-    right: 0px;
-    height: 1px;
-    width: 20px;
-    background: rgb(255, 255, 255);
-    opacity: 0;
-    transition: opacity var(--transitions-duration) ease-in-out;
+const ActiveBorder = styled.span`
+    border-bottom: #fff 1px solid;
+    padding-bottom: 8px;
+    border-width: 40%;
+    color: white;
 `
 
 export default function NavBar(){
+    const router = useRouter()
+
+    const [hrState, setHrState] = useState(0)
+
     return(
         <div>
             <NavUl className={lato.className}>
-                <NavLi>Sobre</NavLi>
-                <NavLi>Projetos</NavLi>
-                <NavLi>Habilidades</NavLi>
+                <NavLi onClick={() => {router.push('/'); setHrState(1)}}>
+                    {hrState === 1 ? 
+                    (<div><ActiveBorder>Sobre</ActiveBorder></div>):
+                    <span>Sobre</span>}</NavLi>
+                <NavLi onClick={() => {router.push('/projetos'); setHrState(2)}}>
+                    {hrState === 2 ? 
+                    (<div><ActiveBorder>Projetos</ActiveBorder></div>):
+                    <span>Projetos</span>}
+                </NavLi>
+                <NavLi onClick={() => {router.push('/habilidades'); setHrState(3)}}>
+                    {hrState === 3 ? 
+                    (<div><ActiveBorder>Habilidades</ActiveBorder></div>):
+                    <span>Habilidades</span>}
+                </NavLi>
             </NavUl>
         </div>
     )

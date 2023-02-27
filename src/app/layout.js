@@ -1,5 +1,3 @@
-
-import Head from "next/head"
 import './global.css'
 import NavBar from "./layout_components/NavBar"
 
@@ -11,14 +9,12 @@ export const metadata = {
     initialScale: 1,
     maximumScale: 1,
   },
+  charset: 'utf-8',
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
-      <Head>
-        <meta charset="utf-8" />
-      </Head>
       <body>
         <NavBar/>
         {children}
