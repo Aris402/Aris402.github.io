@@ -2,7 +2,7 @@ import './global.css'
 import NavBar from "./layout_components/NavBar"
 
 export const metadata = {
-  title: 'Aristóteles | Programador',
+  title: 'Aristóteles | Programador front-end',
   description: 'Portfólio dos meus projetos de programação',
   viewport: {
     width: 'device-width',
