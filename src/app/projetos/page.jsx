@@ -143,9 +143,7 @@ export default function Projetos(){
                                 width={349}
                                 height={196}
                                 alt="Imagem do IFRN: O Jogo"
-                                sizes="(max-width: 768px){
-                                    width: 100px;
-                                } "
+                                className="projects_Images"
                                 priority={false}
                             />
                         </LinkImg>
@@ -169,6 +167,7 @@ export default function Projetos(){
                                 src="/images/clues-seeker.png"
                                 width={230}
                                 height={198}
+                                className="projects_Images"
                                 alt="Imagem do IFRN: O Jogo"
                             />
                         </LinkImg>

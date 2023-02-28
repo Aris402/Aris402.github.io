@@ -1,5 +1,6 @@
 import './global.css'
 import NavBar from "./layout_components/NavBar"
+import Footer from './layout_components/footer'
 
 export const metadata = {
   title: 'Aristóteles | Programador front-end',
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
       <body>
         <NavBar/>
         {children}
+        <Footer/>
       </body>
     </html>
   )
